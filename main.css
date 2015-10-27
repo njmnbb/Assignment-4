@@ -38,6 +38,10 @@ table span, table input {
      vertical-align: middle;
 }
 
+table input:focus {
+	outline: 0;
+}
+
 table span {
 	margin: 10px 0px 10px 10px;
 	width: 450px;
