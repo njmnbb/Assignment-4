@@ -1,3 +1,12 @@
+///// Preloads images for smoother experience
+$.preloadImages = function() {
+  for (var i = 0; i < arguments.length; i++) {
+    $("<img />").attr("src", arguments[i]);
+  }
+}
+
+$.preloadImages("checkmark.png","minus65.png");
+
 ///// Retrieves taskList array from localStorage
 function retrieveArray() {
 	return JSON.parse(localStorage.getItem("taskList"));
@@ -75,7 +84,7 @@ $(document).ready( function() {
 	});
 
 	///// When the delete button is clicked, delete that task from the list
-	$("#todos").on( "click", ".delete", function() {
+	$("#todos").on( "click", ".delete", function(e) {
 
 		// Retrieve tasklist from localStorage
 		var existingArray = retrieveArray();
